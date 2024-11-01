@@ -26,20 +26,33 @@
             </tr>
         </thead>
         <tbody>
-            
+
         </tbody>
         
     </table>
     <button id="load-data" onclick="loadData()">Load Data</button>
 
     <hr>
-    <button id="send-data" onclick="sendData()">Send Data</button>
     <p>Sends an example JSON object to the server with id 11111</p>
 
-    <!-- <button id="load-data" onclick="loadData()">Load Data</button> -->
-    <!-- <p>Loads data from the server</p> -->
+    <h2>Add New Item to Database</h2>
+    <div>
+        <form id="add-form">
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" placeholder="e.g. 123" ><br>
     
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="e.g. myItem"><br>
+    
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" placeholder="e.g. 99"><br><br>
+            
+            <button type="button" id="send-data" onclick="sendData()">Add Item</button>
+        </form> 
 
+        <p id="checkItemAdded"></p>
+    </div>
+   
     <hr>
     <button id="delete-data" onclick="deleteData()">Delete Data</button>
     <p>Deletes a JSON object from the server with 11111</p>
