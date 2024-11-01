@@ -3,22 +3,22 @@ window.onload = loaded;
 let lambdaUrl = "https://m14zlk7u19.execute-api.us-east-2.amazonaws.com/items"
 
 function loadData(){
-    let lambda = document.getElementById("myTable");
+    let lambda = document.getElementById("bodyTable");
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", function () {
         // lambda.innerHTML = xhr.response;
         lambda.innerHTML = ""; // no duplicates
         const items = JSON.parse(xhr.response);
 
-        var title = lambda.insertRow();
-        var idTitle = title.insertCell(0);
-        var nameTitle = title.insertCell(1);
-        var priceTitle = title.insertCell(2);
-        // var idTitle = title.insertCell(3);
+        // var title = lambda.insertRow();
+        // var idTitle = title.insertCell(0);
+        // var nameTitle = title.insertCell(1);
+        // var priceTitle = title.insertCell(2);
+        // // var idTitle = title.insertCell(3);
 
-        idTitle.innerText = "ID";
-        nameTitle.innerText = "name";
-        priceTitle.innerText = "price";
+        // idTitle.innerText = "ID";
+        // nameTitle.innerText = "name";
+        // priceTitle.innerText = "price";
         
         items.forEach(item => {
             //cell.appendChild(cellText);
@@ -34,7 +34,7 @@ function loadData(){
             price.innerText = item.price;
 
             // need delete button
-
+            
         });
     });
 
@@ -42,6 +42,8 @@ function loadData(){
         xhr.send();
     
 }
+
+
 
 function deleteData() {
     // document.getElementById("delete-data").onclick = function () {

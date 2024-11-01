@@ -16,16 +16,16 @@
     <h1>Simple Demo for PUT, GET, and DELETE</h1>
     <!-- <p id="lambda-info">
     </p> -->
-    <table id="myTable">
+    <table id="myTable" summary="">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Action</th>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="bodyTable">
 
         </tbody>
         
@@ -39,13 +39,13 @@
     <div>
         <form id="add-form">
             <label for="id">ID:</label>
-            <input type="text" id="id" name="id" placeholder="e.g. 123" ><br>
+            <input type="text" id="id" name="id" placeholder="123" ><br>
     
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="e.g. myItem"><br>
+            <input type="text" id="name" name="name" placeholder="name"><br>
     
             <label for="price">Price:</label>
-            <input type="text" id="price" name="price" placeholder="e.g. 99"><br><br>
+            <input type="text" id="price" name="price" placeholder="321"><br><br>
             
             <button type="button" id="send-data" onclick="sendData()">Add Item</button>
         </form> 
