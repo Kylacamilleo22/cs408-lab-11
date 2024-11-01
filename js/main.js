@@ -1,6 +1,6 @@
 window.onload = loaded;
 
-let lambdaUrl = "https://m14zlk7u19.execute-api.us-east-2.amazonaws.com/items"
+// const lambdaUrl = "https://m14zlk7u19.execute-api.us-east-2.amazonaws.com/items"
 
 function loadData(){
     let lambda = document.getElementById("bodyTable");
@@ -34,7 +34,10 @@ function loadData(){
             price.innerText = item.price;
 
             // need delete button
-            
+            let delButton = document.createElement("button");
+            delButton.textContent = "Delete";
+            delButton.onclick = function () { deleteData(item.id); };
+            action.appendChild(delButton);
         });
     });
 
@@ -43,16 +46,22 @@ function loadData(){
     
 }
 
+function checkDelete() {
+    var deleteCheck = document.getElementById("delCheck");
+    deleteCheck.hi
+    deleteCheck.textContent = "Item has been deleted, load the data to check"
+}
 
-
-function deleteData() {
+function deleteData(id) {
     // document.getElementById("delete-data").onclick = function () {
         let xhr = new XMLHttpRequest();
         // lambdaUrl + itemNumber
-        xhr.open("DELETE", "https://m14zlk7u19.execute-api.us-east-2.amazonaws.com/items/1111");
+        // const lambdaUrl = "https://m14zlk7u19.execute-api.us-east-2.amazonaws.com/items" + id;
+        
+        xhr.open("DELETE", "https://m14zlk7u19.execute-api.us-east-2.amazonaws.com/items/" + id);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send();
-    
+        checkDelete();
 }
 function sendData() {
     // document.getElementById("send-data").onclick = function () {
