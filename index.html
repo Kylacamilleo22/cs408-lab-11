@@ -13,12 +13,20 @@
  <!-- type="module" is messing me up??? -->
 
 <body>
-    <h1>Simple Demo for PUT, GET, and DELETE</h1>
+    <hr>
+    <h1>My Simple Inventory App</h1>
     <!-- <p id="lambda-info">
     </p> -->
-    <table id="myTable" summary="">
+    <div class="loadDiv">
+        <button id="load-data" onclick="loadData()">Load Data</button> 
+    </div>
+    
+
+    <div class="table">
+        
+    <table summary="A Table that list the id, name, price, and action">
         <thead>
-            <tr>
+            <tr class="firstRow">
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Price</th>
@@ -29,35 +37,37 @@
 
         </tbody>
         
-    </table>
-    <p id="delCheck"></p>
-    <button id="load-data" onclick="loadData()">Load Data</button>
+    </table>        
+    </div>
+
+    <!-- <p id="delCheck"></p> -->
 
     <hr>
-    <p>Sends an example JSON object to the server with id 11111</p>
 
     <h2>Add New Item to Database</h2>
-    <div>
+    <div class="form">
+        <div>
+
+       
         <form id="add-form">
             <label for="id">ID:</label>
-            <input type="text" id="id" name="id" placeholder="123" ><br>
+            <input type="text" id="id" name="id" placeholder="123" required><br>
     
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="name"><br>
+            <input type="text" id="name" name="name" placeholder="name" required><br>
     
             <label for="price">Price:</label>
-            <input type="text" id="price" name="price" placeholder="321"><br><br>
+            <input type="text" id="price" name="price" placeholder="321" required><br><br>
             
             <button type="button" id="send-data" onclick="sendData()">Add Item</button>
+            <p id="checkItemAdded"></p>
+
         </form> 
 
         <p id="checkItemAdded"></p>
+        </div>
     </div>
-   
     <hr>
-    <button id="delete-data" onclick="deleteData()">Delete Data</button>
-    <p>Deletes a JSON object from the server with 11111</p>
-
 </body>
 
 </html>

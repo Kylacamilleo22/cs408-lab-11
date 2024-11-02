@@ -1,4 +1,4 @@
-window.onload = loaded;
+window.onload = loadData;
 
 // const lambdaUrl = "https://m14zlk7u19.execute-api.us-east-2.amazonaws.com/items"
 
@@ -36,7 +36,7 @@ function loadData(){
             // need delete button
             let delButton = document.createElement("button");
             delButton.textContent = "Delete";
-            delButton.onclick = function () { deleteData(item.id); };
+            delButton.onclick = function () { deleteData(item.id); delGone();};
             action.appendChild(delButton);
         });
     });
@@ -46,11 +46,24 @@ function loadData(){
     
 }
 
-function checkDelete() {
-    var deleteCheck = document.getElementById("delCheck");
-    deleteCheck.hi
-    deleteCheck.textContent = "Item has been deleted, load the data to check"
-}
+// function checkDelete() {
+//     var deleteCheck = document.getElementById("delCheck");
+
+//     setTimeout( deleteCheck.textContent = "Item has been deleted, load the data to check", 3000);
+    
+// }
+// Define a function to be executed after the timeout
+// function delGone() {
+//     document.getElementById("checkItemAdded").innerText = " ";
+//   }
+  
+//   // Set a timeout of 2 seconds (2000 milliseconds)
+
+//   function checkDelete() {
+//     document.getElementById("delCheck").innerHTML = "hello";
+
+//   }
+//   setTimeout(checkDelete, 3000);
 
 function deleteData(id) {
     // document.getElementById("delete-data").onclick = function () {
@@ -80,7 +93,7 @@ function sendData() {
                     "price": price.value,
                     "name": name.value
                 }));
-                check.textContent = "Added Item. Load table to check";
+                check.textContent = "Added Item. Load the table to check";
         } else {
             check.textContent = "Cannot add empty values";
         }
