@@ -2,6 +2,7 @@ window.onload = loadData;
 
 // const lambdaUrl = "https://m14zlk7u19.execute-api.us-east-2.amazonaws.com/items"
 
+//Loads the data using GET
 function loadData(){
     let lambda = document.getElementById("bodyTable");
     let xhr = new XMLHttpRequest();
@@ -10,6 +11,7 @@ function loadData(){
         lambda.innerHTML = ""; // no duplicates
         const items = JSON.parse(xhr.response); // parse the item
         
+        // iterate through all items
         items.forEach(item => {
             //cell.appendChild(cellText);
             //row.appendChild(cell);
@@ -36,6 +38,7 @@ function loadData(){
     
 }
 
+// Deletes data using DELETE
 function deleteData(id) {
         let xhr = new XMLHttpRequest();
         // lambdaUrl + itemNumber
@@ -46,6 +49,7 @@ function deleteData(id) {
         // checkDelete(); // Display message that it has been deleted -- not working
 }
 
+// Send/Add data using PUT
 function sendData() {
     // document.getElementById("send-data").onclick = function () {
         let xhr = new XMLHttpRequest();
