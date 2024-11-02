@@ -74,8 +74,9 @@ tr:nth-child(even) {
 
 .form {
   margin:50px;
-  margin-top: 0px;
+  margin-top: 10px;
   padding: 10px;
+  padding-top: 20px;
   background-color: #5e6d61;
   color: white;
   border: 3px solid #dddddd;
