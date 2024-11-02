@@ -51,26 +51,23 @@ function deleteData(id) {
 
 // Send/Add data using PUT
 function sendData() {
-    // document.getElementById("send-data").onclick = function () {
-        let xhr = new XMLHttpRequest();
-        xhr.open("PUT", "https://m14zlk7u19.execute-api.us-east-2.amazonaws.com/items");
-        xhr.setRequestHeader("Content-Type", "application/json");
+    let xhr = new XMLHttpRequest();
+    xhr.open("PUT", "https://m14zlk7u19.execute-api.us-east-2.amazonaws.com/items");
+    xhr.setRequestHeader("Content-Type", "application/json");
 
-        var id = document.getElementById("id");
-        var name = document.getElementById("name");
-        var price = document.getElementById("price");
-        var check = document.getElementById("checkItemAdded");
+    var id = document.getElementById("id");
+    var name = document.getElementById("name");
+    var price = document.getElementById("price");
+    var check = document.getElementById("checkItemAdded");
 
-        if (id.value != "" || name.value != "" || price.value != "") {
-        xhr.send(JSON.stringify({
-                    "id": id.value,
-                    "price": price.value,
-                    "name": name.value
-                }));
-                check.textContent = "Added Item. Load the table to check";
-        } else {
-            check.textContent = "Cannot add empty values";
-        }
-        
-    
+    if (id.value != "" || name.value != "" || price.value != "") {
+    xhr.send(JSON.stringify({
+                "id": id.value,
+                "price": price.value,
+                "name": name.value
+            }));
+            check.textContent = "Added Item. Load the table to check";
+    } else {
+        check.textContent = "Cannot add empty values";
+    }
 }
