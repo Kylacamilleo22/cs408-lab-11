@@ -1,24 +1,24 @@
-# Web Dev Starter Code
+# CS408 - Lab11.2
 
 ## Overview
 
-TODO: Write a project description
+This is a simple GET, PUT, DELETE demo that uses AWS API with noSQL database. 
+
+## Compiling and Running
+
+To run,
+
+Clone the repository
+- In VSCode, if have the preview extension added, right click on index.html and click 'show preview'
+- (optional) To view in localhost,
+  - open localhost:3000 in your browser
 
 ## Sources and Credits
 
-TODO: You must credit the sources and authors of any code, libraries, or other
-assets you use in your project. If you leave this section blank, your project
-will be considered in violation of the Academic Honesty policy unless you truly
-created everything from scratch with no outside help. If you need to use a
-source that you cannot credit (e.g. a classmate's work), you must get explicit
-permission from your instructor.
-
-A simple bulleted list below is sufficient. For example:
-
-- Bootstrap: https://getbootstrap.com/
-- jQuery: https://jquery.com/
-- Background image: https://unsplash.com/photos/...
-- Sound effects: https://freesound.org/people/...
-- Icons: https://fontawesome.com/
-- Fonts: https://fonts.google.com/
-- etc.
+- w3schools
+  - https://www.w3schools.com/html/html_forms.asp
+  - https://www.w3schools.com/jsref/met_table_insertrow.asp#:~:text=The%20insertRow()%20method%20creates,method%20to%20remove%20a%20row.
+  - https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_table_insert_deleterow
+- mdn web docs
+  - https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics
+  - https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces

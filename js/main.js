@@ -8,17 +8,7 @@ function loadData(){
     xhr.addEventListener("load", function () {
         // lambda.innerHTML = xhr.response;
         lambda.innerHTML = ""; // no duplicates
-        const items = JSON.parse(xhr.response);
-
-        // var title = lambda.insertRow();
-        // var idTitle = title.insertCell(0);
-        // var nameTitle = title.insertCell(1);
-        // var priceTitle = title.insertCell(2);
-        // // var idTitle = title.insertCell(3);
-
-        // idTitle.innerText = "ID";
-        // nameTitle.innerText = "name";
-        // priceTitle.innerText = "price";
+        const items = JSON.parse(xhr.response); // parse the item
         
         items.forEach(item => {
             //cell.appendChild(cellText);
@@ -36,46 +26,26 @@ function loadData(){
             // need delete button
             let delButton = document.createElement("button");
             delButton.textContent = "Delete";
-            delButton.onclick = function () { deleteData(item.id); delGone();};
+            delButton.onclick = function () { deleteData(item.id);};
             action.appendChild(delButton);
         });
     });
 
-        xhr.open("GET", "https://m14zlk7u19.execute-api.us-east-2.amazonaws.com/items");
-        xhr.send();
+    xhr.open("GET", "https://m14zlk7u19.execute-api.us-east-2.amazonaws.com/items");
+    xhr.send();
     
 }
 
-// function checkDelete() {
-//     var deleteCheck = document.getElementById("delCheck");
-
-//     setTimeout( deleteCheck.textContent = "Item has been deleted, load the data to check", 3000);
-    
-// }
-// Define a function to be executed after the timeout
-// function delGone() {
-//     document.getElementById("checkItemAdded").innerText = " ";
-//   }
-  
-//   // Set a timeout of 2 seconds (2000 milliseconds)
-
-//   function checkDelete() {
-//     document.getElementById("delCheck").innerHTML = "hello";
-
-//   }
-//   setTimeout(checkDelete, 3000);
-
 function deleteData(id) {
-    // document.getElementById("delete-data").onclick = function () {
         let xhr = new XMLHttpRequest();
         // lambdaUrl + itemNumber
         // const lambdaUrl = "https://m14zlk7u19.execute-api.us-east-2.amazonaws.com/items" + id;
-        
         xhr.open("DELETE", "https://m14zlk7u19.execute-api.us-east-2.amazonaws.com/items/" + id);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send();
-        checkDelete();
+        // checkDelete(); // Display message that it has been deleted -- not working
 }
+
 function sendData() {
     // document.getElementById("send-data").onclick = function () {
         let xhr = new XMLHttpRequest();

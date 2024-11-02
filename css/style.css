@@ -83,6 +83,7 @@ tr:nth-child(even) {
   font-size: 20px;
   border-color: white;
   display: flex;
+  border-radius: 1;
 }
 
 .form label {
@@ -113,5 +114,4 @@ tr:nth-child(even) {
 
 #checkItemAdded {
   margin-left: 250px;
-
 }
